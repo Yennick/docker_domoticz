@@ -57,5 +57,7 @@ VOLUME /config
 
 EXPOSE 8080
 
+EXPOSE 443
+
 ENTRYPOINT ["/src/domoticz/domoticz", "-dbase", "/config/domoticz.db", "-log", "/config/domoticz.log"]
-CMD ["-www", "8080"]
+CMD ["-www", "8080", "-sslwww", "443", "-sslcert", "/config/domoticz.pem"]
